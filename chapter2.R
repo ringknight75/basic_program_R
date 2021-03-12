@@ -159,3 +159,8 @@ str(df)
 # $ face : chr  "ace" "two" "six"
 # $ suit : chr  "clubs" "clubs" "clubs"
 # $ value: num  1 2 3
+
+
+head(deck)
+getwd()
+write.csv(deck, file = "card.csv", row.names = FALSE)

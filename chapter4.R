@@ -87,4 +87,25 @@ head(deck3, 20)
 deck3$value[deck3$face == "ace"] <- 14
 
 
+deck4 <- deck
+deck4$value <- 0
+deck4$value[deck4$suit == "hearts"] <- 1
+deck4[deck4$face == "queen",]
+deck4[deck4$suit == "spades",]
 
+
+(queenOfSpades <- deck4$face == "queen" & deck4$suit == "spades")
+deck4$value[queenOfSpades] <- 13
+deck4[queenOfSpades,]
+
+
+deck5 <- deck
+head(deck5, 13)
+
+facecard <- deck5$face %in%  c("king", "queen", "jack")
+deck5[facecard,]
+deck5$value[facecard] <- 10
+head(deck5, 13)
+
+deck5$value[deck5$face == "ace"] <- NA
+head(deck5, 13)

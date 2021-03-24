@@ -144,6 +144,6 @@ slot_display <- function(prize){
 
 slot_display(one_play)
 
+print
 
-
-
+methods(print)

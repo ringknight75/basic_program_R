@@ -1,6 +1,6 @@
 #====================================================================================================
 # 작성일자 : 2021.03.22
-# 작성목적 : Hands-On Programing with R 7장 관련 소스 
+# 작성목적 : Hands-On Programing with R 7 ~ 8장 관련 소스 
 #====================================================================================================
 
 
@@ -147,3 +147,48 @@ slot_display(one_play)
 print
 
 methods(print)
+
+class(one_play) <- "slots"
+attributes(one_play)
+
+args(print)
+
+print.slots <- function(x, ...){
+  cat("I'm using the print.slots method")
+}
+
+print(one_play)
+
+one_play
+
+
+rm(print.slots)
+
+now <- Sys.time()
+attributes(now)
+
+
+print.slots <- function(x, ...){
+  slot_display(x)
+}
+
+
+print(one_play)
+one_play
+
+
+
+play <- function(){
+  symbols <- get_symbols()
+  structure(score(symbols), symbols = symbols, class = "slots")
+}
+
+play()
+
+methods(class = "factor")
+
+play1 <- play()
+play2 <- play()
+
+c(play1, play2)
+
